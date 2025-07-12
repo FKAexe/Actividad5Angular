@@ -1,6 +1,21 @@
-<div class="contenedorNoticias">
-    <img [src]="arrayNoticias[0].imagen" alt="">
-    <h3>{{arrayNoticias[0].titulo}}</h3>
-    <p>{{arrayNoticias[0].texto}}</p>
-    <p>{{arrayNoticias[0].fecha}}</p>
+<div class="contenedorForm">
+    <form (ngSubmit)="addNoticia()">
+    <input type="text" [(ngModel)]="nuevaNoticia.imagen" name="imagen"  placeholder="Inserte URL Imagen" required>
+    <input type="text" [(ngModel)]="nuevaNoticia.titulo" name="titulo" placeholder="Inserte titulo de la noticia" required>
+    <input type="text" [(ngModel)]="nuevaNoticia.texto" name="texto" placeholder="Inserte texto de la noticia" required>
+    <input type="date" [(ngModel)]="nuevaNoticia.fecha"name="fecha" placeholder="Inserte fecha de la noticia" required>
+    <button type="submit">Enviar</button>
+    </form>
+</div>
+
+<div class="noticias-wrapper">
+    @for(noti of arrayNoticias; track noti.titulo){
+    <div class="contenedorNoticias">
+    <img [src]="noti.imagen" alt="">
+    <h3>{{noti.titulo}}</h3>
+    <p>{{noti.texto}}</p>
+    <p class="fecha">{{noti.fecha}}</p>
+    </div>
+    <br>
+    }
 </div>

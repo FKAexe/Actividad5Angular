@@ -1,3 +1,10 @@
+.contenedorForm input{
+    field-sizing: content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0 10px;
+}
 .contenedorNoticias{
     display: flex;
     flex-direction: column;
@@ -9,4 +16,12 @@
 
 .img .contenedorNoticias{
     align-self: center;
+}
+
+.fecha{
+    font-size: small;
+}
+
+.noticias-wrapper{
+    margin-top: 20px;
 }
